@@ -63,5 +63,10 @@ app.MapGet("/casa", async (IAdoAsync repo) =>
     return Results.Ok(casas);
 });
 
+app.MapPost("/casa", async (Casa nuevo, IAdoAsync repo) =>
+{
+    await repo.AltaCasaAsync(nuevo);
+    return Results.Created($"/casa/{nuevo.IdCasa}", nuevo);
+});
 
 app.Run();
