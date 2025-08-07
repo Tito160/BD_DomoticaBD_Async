@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biblioteca.Persistencia.Dap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Persistencia.Dapper.Test", "Biblioteca.Persistencia.Dapper.TestAsync\Biblioteca.Persistencia.Dapper.Test.csproj", "{A7CCB49D-A9BD-4555-B48F-1BAB37040002}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI", "MinimalAPI\MinimalAPI.csproj", "{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,18 @@ Global
 		{A7CCB49D-A9BD-4555-B48F-1BAB37040002}.Release|x64.Build.0 = Release|Any CPU
 		{A7CCB49D-A9BD-4555-B48F-1BAB37040002}.Release|x86.ActiveCfg = Release|Any CPU
 		{A7CCB49D-A9BD-4555-B48F-1BAB37040002}.Release|x86.Build.0 = Release|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Debug|x64.Build.0 = Debug|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Debug|x86.Build.0 = Debug|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Release|x64.ActiveCfg = Release|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Release|x64.Build.0 = Release|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{FCE1E7AB-C26C-4F97-A2C1-48E0F731D0E5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

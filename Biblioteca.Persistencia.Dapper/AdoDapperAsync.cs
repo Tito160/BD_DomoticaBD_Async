@@ -33,7 +33,7 @@ namespace Biblioteca.Persistencia.Dapper
 
         public AdoDapperAsync(IDbConnection conexion)
         => _conexion = conexion;
-        public async Task AltaCasa(Casa casa)
+        public async Task AltaCasaAsync(Casa casa)
         {
             var parametros = new DynamicParameters();
             parametros.Add("@unidCasa", direction: ParameterDirection.Output);
