@@ -20,6 +20,9 @@ builder.Services.AddScoped<IAdoAsync, AdoDapperAsync>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -30,6 +33,11 @@ if (app.Environment.IsDevelopment())
     });
     app.MapScalarApiReference();
 }
+app.UseHttpsRedirection();
+app.UseAuthorization();
+
+// Mapear controllers
+app.MapControllers();
 app.MapGet("/electrodomestico/{id}", async (int id, IAdoAsync repo) =>
 {
     var electro = await repo.ObtenerElectrodomesticoAsync(id);
