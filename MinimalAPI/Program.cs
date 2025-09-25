@@ -75,7 +75,9 @@ app.MapPost("/casa/dto", async (CrearCasaRequest request, IAdoAsync repo) =>
 {
     var nuevaCasa = new Casa { Direccion = request.Direccion };
     await repo.AltaCasaAsync(nuevaCasa);
-    return Results.Created($"/casa/{nuevaCasa.IdCasa}", nuevaCasa);
+
+    var response = new CasaResponse(nuevaCasa.IdCasa, nuevaCasa.Direccion);
+    return Results.Created($"/casa/{nuevaCasa.IdCasa}", response);
 });
 
 app.MapPost("/electrodomestico/dto", async (CrearElectrodomesticoRequest request, IAdoAsync repo) =>
@@ -91,7 +93,18 @@ app.MapPost("/electrodomestico/dto", async (CrearElectrodomesticoRequest request
     };
 
     await repo.AltaElectrodomesticoAsync(nuevoElectro);
-    return Results.Created($"/electrodomestico/{nuevoElectro.IdElectrodomestico}", nuevoElectro);
+
+    var response = new ElectrodomesticoResponse(
+        nuevoElectro.IdElectrodomestico,
+        nuevoElectro.IdCasa,
+        nuevoElectro.Nombre,
+        nuevoElectro.Tipo,
+        nuevoElectro.Ubicacion,
+        nuevoElectro.Encendido,
+        nuevoElectro.Apagado
+    );
+
+    return Results.Created($"/electrodomestico/{nuevoElectro.IdElectrodomestico}", response);
 });
 
 app.MapGet("/casa/dto/{id}", async (int id, IAdoAsync repo) =>
