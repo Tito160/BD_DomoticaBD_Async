@@ -3,6 +3,7 @@ using MySqlConnector;
 using Scalar.AspNetCore;
 using Biblioteca;
 using Biblioteca.Persistencia.Dapper;
+using MinimalApi.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,6 +68,61 @@ app.MapPost("/casa", async (Casa nuevo, IAdoAsync repo) =>
 {
     await repo.AltaCasaAsync(nuevo);
     return Results.Created($"/casa/{nuevo.IdCasa}", nuevo);
+});
+
+
+app.MapPost("/casa/dto", async (CrearCasaRequest request, IAdoAsync repo) =>
+{
+    var nuevaCasa = new Casa { Direccion = request.Direccion };
+    await repo.AltaCasaAsync(nuevaCasa);
+    return Results.Created($"/casa/{nuevaCasa.IdCasa}", nuevaCasa);
+});
+
+app.MapPost("/electrodomestico/dto", async (CrearElectrodomesticoRequest request, IAdoAsync repo) =>
+{
+    var nuevoElectro = new Electrodomestico
+    {
+        IdCasa = request.IdCasa,
+        Nombre = request.Nombre,
+        Tipo = request.Tipo,
+        Ubicacion = request.Ubicacion,
+        Encendido = request.Encendido,
+        Apagado = request.Apagado
+    };
+
+    await repo.AltaElectrodomesticoAsync(nuevoElectro);
+    return Results.Created($"/electrodomestico/{nuevoElectro.IdElectrodomestico}", nuevoElectro);
+});
+
+app.MapGet("/casa/dto/{id}", async (int id, IAdoAsync repo) =>
+{
+    var casa = await repo.ObtenerCasaAsync(id);
+
+    if (casa is null)
+        return Results.NotFound();
+
+    var response = new CasaResponse(casa.IdCasa, casa.Direccion);
+    return Results.Ok(response);
+});
+
+app.MapGet("/electrodomestico/dto/{id}", async (int id, IAdoAsync repo) =>
+{
+    var electro = await repo.ObtenerElectrodomesticoAsync(id);
+
+    if (electro is null)
+        return Results.NotFound();
+
+    var response = new ElectrodomesticoResponse(
+        electro.IdElectrodomestico,
+        electro.IdCasa,
+        electro.Nombre,
+        electro.Tipo,
+        electro.Ubicacion,
+        electro.Encendido,
+        electro.Apagado
+    );
+
+    return Results.Ok(response);
 });
 
 app.Run();
