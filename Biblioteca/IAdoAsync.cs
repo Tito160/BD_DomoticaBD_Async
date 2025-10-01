@@ -12,9 +12,9 @@ namespace Biblioteca
         Task AltaConsumoAsync(Consumo consumo);
         Task AltaHistorialRegistroAsync(HistorialRegistro historialRegistro);
         Task AltaElectrodomesticoAsync(Electrodomestico electrodomestico);
-        Task<Electrodomestico>? ObtenerElectrodomesticoAsync(int IdElectrodomestico);
-        Task<Casa>? ObtenerCasaAsync(int IdCasa);
-        Task<Usuario>? UsuarioPorPassAsync(string Correo, string Contrasenia);
+        Task<Electrodomestico?> ObtenerElectrodomesticoAsync(int IdElectrodomestico);
+        Task<Casa?> ObtenerCasaAsync(int IdCasa);
+        Task<Usuario?> UsuarioPorPassAsync(string Correo, string Contrasenia);
         Task<IEnumerable<Electrodomestico>> ObtenerTodosLosElectrodomesticosAsync();
         Task<IEnumerable<Casa>> ObtenerTodasLasCasasAsync();
 

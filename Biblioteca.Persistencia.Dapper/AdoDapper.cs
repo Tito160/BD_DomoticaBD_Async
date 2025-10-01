@@ -39,7 +39,7 @@ public class AdoDapper : IAdo
         parametros.Add("@unidUsuario", direction: ParameterDirection.Output);
         parametros.Add("@unNombre", usuario.Nombre);
         parametros.Add("@unCorreo", usuario.Correo);
-        parametros.Add("@uncontrasenia", usuario.Contrasenia);
+        parametros.Add("@unContrasenia", usuario.Contrasenia);
         parametros.Add("@unTelefono", usuario.Telefono);
 
         _conexion.Execute("altaUsuario", parametros);

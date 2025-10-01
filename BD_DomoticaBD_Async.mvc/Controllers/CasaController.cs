@@ -12,7 +12,7 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CasaController : ControllerBase
+    public class CasaController : Controller
     {
         private readonly IAdoAsync _repo;
 
