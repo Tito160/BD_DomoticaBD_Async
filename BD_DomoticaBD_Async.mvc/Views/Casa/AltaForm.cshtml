@@ -1,0 +1,16 @@
+@model Biblioteca.Casa
+
+@{
+    ViewData["Title"] = "Alta de Casa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="AltaForm" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Direccion">Dirección:</label>
+        <input asp-for="Direccion" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>

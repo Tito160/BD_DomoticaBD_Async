@@ -12,6 +12,9 @@ BEGIN
 	SET unidUsuario = LAST_INSERT_ID();
 END $$
 
+CALL altaUsuario (@idUsuarioM, 'Mario', 'marioguzman133@gmail.com', '12345', '1155799881');
+CALL altaUsuario (@idUsuarioJ, 'Julio', 'juliovaldez@gmail.com', '987865', '11587982536');
+
 DELIMITER $$
 DROP PROCEDURE IF EXISTS altaCasa $$
 CREATE PROCEDURE altaCasa (OUT unidCasa INT,

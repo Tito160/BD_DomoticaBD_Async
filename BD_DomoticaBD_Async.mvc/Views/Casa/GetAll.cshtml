@@ -1,14 +1,18 @@
-@using MinimalApi.Dtos
-@model List<CasaResponse>
+@model List<Biblioteca.Casa>
+
 @{
-    ViewData["Title"] = "GetAll";
+    ViewData["Title"] = "Lista de casas";
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    @foreach(var casa in Model)
+    @foreach (var casa in Model)
     {
         <p>@casa.Direccion</p>
     }
+
+    <a asp-action="AltaForm">
+        <button type="button">Crear Casa</button>
+    </a>
 </div>

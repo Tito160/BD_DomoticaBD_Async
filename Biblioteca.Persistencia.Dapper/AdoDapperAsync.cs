@@ -135,11 +135,16 @@ namespace Biblioteca.Persistencia.Dapper
             var sql = "SELECT * FROM Electrodomestico";
             return await _conexion.QueryAsync<Electrodomestico>(sql);
         }
-        
+
         public async Task<IEnumerable<Casa>> ObtenerTodasLasCasasAsync()
         {
             var sql = "SELECT * FROM Casa";
             return await _conexion.QueryAsync<Casa>(sql);
+        }
+                public async Task<IEnumerable<Usuario>> ObtenerTodosLosUsuariosAsync()
+        {
+            var sql = "SELECT * FROM Usuario";
+            return await _conexion.QueryAsync<Usuario>(sql);
         }
     }
 }
