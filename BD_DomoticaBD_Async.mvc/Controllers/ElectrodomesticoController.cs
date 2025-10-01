@@ -52,9 +52,18 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
                 e.Ubicacion,
                 e.Encendido,
                 e.Apagado
-            )).ToList();
+            ));
 
             return View(response);
+        }
+        [HttpGet]
+        public IActionResult AltaForm() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> AltaForm(Electrodomestico electrodomestico)
+        {
+            await _repo.ObtenerTodosLosElectrodomesticosAsync();
+            return RedirectToAction("GetAll"); // redirige al listado
         }
 
         [HttpPost]

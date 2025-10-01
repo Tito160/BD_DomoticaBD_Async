@@ -1,0 +1,28 @@
+@model Biblioteca.Electrodomestico
+
+@{
+    ViewData["Title"] = "Alta de Casa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="AltaForm" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="IdElectrodomestico">Electrodomestico:</label>
+        <input asp-for="IdElectrodomestico" />
+        <label asp-for="IdCasa">Casa:</label>
+        <input asp-for="IdCasa" />
+        <label asp-for="Nombre">Electrodomestico:</label>
+        <input asp-for="Nombre" />
+        <label asp-for="Tipo">Electrodomestico:</label>
+        <input asp-for="Tipo" />
+        <label asp-for="Ubicacion">Electrodomestico:</label>
+        <input asp-for="Ubicacion" />
+        <label asp-for="Encendido">Electrodomestico:</label>
+        <input asp-for="Encendido" />
+        <label asp-for="Apagado">Electrodomestico:</label>
+        <input asp-for="Apagado" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>
