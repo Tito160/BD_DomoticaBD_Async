@@ -52,6 +52,15 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
 
             return View(response);
         }
+        [HttpGet]
+        public IActionResult AltaForm() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> AltaForm(Usuario usuario)
+        {
+            await _repo.AltaUsuarioAsync(usuario);
+            return RedirectToAction("GetAll"); // redirige al listado
+        }
         
         [HttpPost]
         public async Task<IActionResult> Post(CrearUsuarioRequest request)

@@ -62,7 +62,7 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> AltaForm(Electrodomestico electrodomestico)
         {
-            await _repo.ObtenerTodosLosElectrodomesticosAsync();
+            await _repo.AltaElectrodomesticoAsync(electrodomestico);
             return RedirectToAction("GetAll"); // redirige al listado
         }
 
