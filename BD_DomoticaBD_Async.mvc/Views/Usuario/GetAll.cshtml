@@ -1,0 +1,18 @@
+@using MinimalApi.Dtos
+@model List<UsuarioResponse>
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    @foreach(var usuario in Model)
+    {
+        <p>@usuario.IdUsuario</p>
+        <P>@usuario.Nombre</P>
+        <p>@usuario.Correo</p>
+        <p>@usuario.Contrasenia</p>
+        <p>@usuario.Telefono</p>
+    }
+</div>

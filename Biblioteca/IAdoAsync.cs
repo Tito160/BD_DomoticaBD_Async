@@ -17,6 +17,6 @@ namespace Biblioteca
         Task<Usuario?> UsuarioPorPassAsync(string Correo, string Contrasenia);
         Task<IEnumerable<Electrodomestico>> ObtenerTodosLosElectrodomesticosAsync();
         Task<IEnumerable<Casa>> ObtenerTodasLasCasasAsync();
-
+        Task<IEnumerable<Usuario>> ObtenerTodosLosUsuariosAsync();
     }
 }
