@@ -1,0 +1,14 @@
+@using MinimalApi.Dtos
+@model List<CasaResponse>
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    @foreach(var casa in Model)
+    {
+        <p>@casa.Direccion</p>
+    }
+</div>

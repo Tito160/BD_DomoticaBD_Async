@@ -1,0 +1,20 @@
+@using MinimalApi.Dtos
+@model List<ElectrodomesticoResponse>
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    @foreach(var electrodomestico in Model)
+    {
+        <p>@electrodomestico.IdElectrodomestico</p>
+        <P>@electrodomestico.IdCasa</P>
+        <p>@electrodomestico.Nombre</p>
+        <p>@electrodomestico.Tipo</p>
+        <p>@electrodomestico.Ubicacion</p>
+        <p>@electrodomestico.Encendido</p>
+        <P>@electrodomestico.Apagado</P>
+    }
+</div>

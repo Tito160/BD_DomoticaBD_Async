@@ -52,9 +52,9 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
                 e.Ubicacion,
                 e.Encendido,
                 e.Apagado
-            ));
+            )).ToList();
 
-            return Ok(response);
+            return View(response);
         }
 
         [HttpPost]

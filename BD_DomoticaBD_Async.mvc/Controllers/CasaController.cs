@@ -35,8 +35,8 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
         public async Task<IActionResult> GetAll()
         {
             var casas = await _repo.ObtenerTodasLasCasasAsync();
-            var response = casas.Select(c => new CasaResponse(c.IdCasa, c.Direccion));
-            return Ok(response);
+            var response = casas.Select(c => new CasaResponse(c.IdCasa, c.Direccion)).ToList();
+            return View(response);
         }
 
         [HttpPost]
