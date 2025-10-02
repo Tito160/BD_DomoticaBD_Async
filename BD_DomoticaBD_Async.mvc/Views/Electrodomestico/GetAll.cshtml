@@ -7,17 +7,21 @@
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    @foreach(var electrodomestico in Model)
-    {
-        <p>@electrodomestico.IdElectrodomestico</p>
-        <P>@electrodomestico.IdCasa</P>
-        <p>@electrodomestico.Nombre</p>
-        <p>@electrodomestico.Tipo</p>
-        <p>@electrodomestico.Ubicacion</p>
-        <p>@electrodomestico.Encendido</p>
-        <P>@electrodomestico.Apagado</P>
-    }
-        <a asp-action="AltaForm">
-        <button type="button">Crear Electrodomestico</button>
+    <details open>
+        <summary>Mostrar Electrodomésticos</summary>
+        @foreach(var electrodomestico in Model)
+        {
+            <p>@electrodomestico.IdElectrodomestico</p>
+            <P>@electrodomestico.IdCasa</P>
+            <p>@electrodomestico.Nombre</p>
+            <p>@electrodomestico.Tipo</p>
+            <p>@electrodomestico.Ubicacion</p>
+            <p>@electrodomestico.Encendido</p>
+            <P>@electrodomestico.Apagado</P>
+        }
+    </details>
+    
+    <a asp-action="AltaForm">
+        <button type="button">Crear Electrodoméstico</button>
     </a>
 </div>

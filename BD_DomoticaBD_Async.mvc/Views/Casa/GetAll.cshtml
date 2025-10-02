@@ -7,10 +7,14 @@
 <h1>@ViewData["Title"]</h1>
 
 <div>
+    <details open>
+            <summary>Mostrar Casas</summary>
+
     @foreach (var casa in Model)
     {
         <p>@casa.Direccion</p>
     }
+    </details>
 
     <a asp-action="AltaForm">
         <button type="button">Crear Casa</button>
