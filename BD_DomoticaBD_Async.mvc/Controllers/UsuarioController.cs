@@ -10,8 +10,6 @@ using MinimalApi.Dtos;
 
 namespace BD_DomoticaBD_Async.mvc.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     public class UsuarioController : Controller
     {
         private readonly IAdoAsync _repo;
