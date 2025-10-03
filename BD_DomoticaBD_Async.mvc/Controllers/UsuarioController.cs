@@ -51,7 +51,7 @@ namespace BD_DomoticaBD_Async.mvc.Controllers
             return View(response);
         }
         [HttpGet]
-        public IActionResult AltaFormo() => View();
+        public IActionResult AltaForm() => View();
 
         [HttpPost]
         public async Task<IActionResult> AltaForm(Usuario usuario)
